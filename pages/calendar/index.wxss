@@ -1,0 +1,184 @@
+/* pages/calendar/index.wxss */
+
+.year-Month{
+  display: flex;
+  justify-content: space-around;
+}
+.yearBox{
+  margin: 0 auto;
+}
+.year-Month view{
+  display: inline-block;
+  line-height: 56px;
+}
+.month-Prior,.month-Next{
+  font-size: 16px;
+  margin: 8px;
+  margin-bottom: 8px;
+  background-color: #fff;
+  display: inline-block;
+  text-align: center;
+  width:40px;
+}
+
+.myWeek{
+  width: 13%;
+  text-align: center;
+  font-size: 16px;
+  margin: 8 auto;
+  margin-left: 9rpx;
+  display: inline-block;
+  line-height: 90rpx;
+  background-color: #fff;
+  color: #000;
+}
+
+.myDay{
+  width: 13%;
+  text-align: center;
+  font-size: 16px;
+  margin: 8 auto;
+  margin-left: 9rpx;
+  display: inline-block;
+  line-height: 90rpx;
+  background-color: #25bc1e;
+  color: #fff;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.myWDay{
+  width: 13%;
+  text-align: center;
+  font-size: 16px;
+  margin: 8 auto;
+  margin-left: 9rpx;
+  display: inline-block;
+  line-height: 90rpx;
+  background-color: #ff0000;
+  color: #fff;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.myDaySelected{
+  width: 13%;
+  text-align: center;
+  font-size: 16px;
+  margin: 8 auto;
+  margin-left: 9rpx;
+  display: inline-block;
+  line-height: 90rpx;
+  background-color: #0000ff;
+  color: #fff;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.myToDay{
+  width: 13%;
+  text-align: center;
+  font-size: 16px;
+  margin: 8 auto;
+  margin-left: 9rpx;
+  display: inline-block;
+  line-height: 90rpx;
+  background-color: #33aefd;
+  color: #fff;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.myPWDay,.myNWDay{
+  width: 13%;
+  text-align: center;
+  font-size: 16px;
+  margin: 8 auto;
+  margin-left: 9rpx;
+  display: inline-block;
+  line-height: 90rpx;
+  background-color: rgb(253, 90, 90);
+  color: #fff;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.cwDay{
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 10px;
+  height: 10px;
+  color: #fff;
+  background: rgb(255, 0, 0);
+  text-align: left;
+  font-size: 10px;
+  text-indent: 1px;
+  line-height: 10px;
+  overflow: hidden;
+}
+
+.myPriorDay,.myNextDay{
+  width: 13%;
+  text-align: center;
+  font-size: 16px;
+  margin: 8 auto;
+  margin-left: 9rpx;
+  display: inline-block;
+  line-height: 90rpx;
+  background-color: #ace7a9;
+  color: #fff;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.maskLayor{
+  position: relative;
+  top: -93rpx;
+  width: 100%;
+  height: 60rpx;
+  border: 1px solid #ccc;
+}
+
+.myRecord{
+  border: 1px solid rgb(0, 0, 0);
+  height: 110px;
+  background-color: rgb(255, 255, 255);
+}
+
+.myTitle,.myRemark{
+  padding-left: 16px;
+  padding-top: 8px;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.myTitlebody{
+  border: 1px solid rgb(175, 148, 148);
+}
+.myRemarkbody{
+  border: 1px solid rgb(175, 148, 148);
+  line-height: 20px;
+}
+.mytext{
+  line-height: 40px;
+  cursor: auto;
+  width: 230px;
+  height: 60px;
+  display: block;
+  position: relative;
+}
+
+textarea {
+  height: 3em;
+  width: 500rpx;
+  padding: 25rpx 0;
+  border-top: 1rpx solid rgba(0,0,0,.1);
+
+}
+
+.textarea-wrp {
+  padding: 0 25rpx;
+  background-color: #fff;
+}
+
+

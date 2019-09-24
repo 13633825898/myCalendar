@@ -1,0 +1,69 @@
+<!-- 以下是月份与年份的样式 -->
+<view class="year-Month">
+    <button class="month-Prior" bindtap="moveToPrior">{{'<'}}</button>
+    <picker mode="date" fields="month" start="1970-01-01" end="2050-01-01" bindchange="bindDateChange"> 
+      <view> {{year}} 年 {{month}} 月 </view>
+    </picker>
+    <button class="month-Next" bindtap="moveToNext">{{'>'}}</button>
+</view>
+
+<!-- 以下是星期的排列 -->
+<view>
+  <block wx:for="{{weekDay}}" wx:key="{{index}}">
+    <button class="myWeek">{{item}}</button>
+  </block>
+</view>
+
+
+
+<!-- 以下是天数的样式 -->
+<view bindtouchstart="touchStart" bindtouchend="touchEnd">
+  <!-- 此处是上个月的最后几天 -->
+  <block wx:for="{{priorDateDay}}" wx:key="{{index}}">
+    <!-- 显示星期为红色 -->
+    <block wx:if="{{priorWeekDay[index] == 0 || priorWeekDay[index] == 6}}">
+      <button id="pwDay" class="myPWDay" bindtap="priorDayClick" data-text="{{item}}">{{item}}</button>
+    </block>
+    <block wx:else>
+      <button id="priorDay" class="myPriorDay" bindtap="priorDayClick" data-text="{{item}}">{{item}}</button>
+    </block>
+  </block>
+  <!-- 此处是本月日期 -->
+  <block wx:for="{{dateDay}}" wx:key="{{index}}">
+    <block wx:if="{{day == item}}"> 
+      <button id="today" class="myToDay" bindtap="todayClick" data-text="{{item}}">{{item}}</button>
+    </block>
+    <block wx:elif="{{selfWeekDay[index] == 0 || selfWeekDay[index] == 6}}">
+      <button id="wday" class="myWDay" bindtap="dayClick" data-text="{{item}}">
+        <text class="cwDay">休</text>
+        {{item}}
+      </button>
+    </block>
+    <block wx:else>
+      <button id="day" class="myDay" bindtap="dayClick" data-text="{{item}}">{{item}}</button>
+    </block>
+  </block>
+  <!-- 此处是下个月的前几天 -->
+  <block wx:for="{{nextDateDay}}" wx:key="{{index}}">
+    <block wx:if="{{nextWeekDay[index] == 0 || nextWeekDay[index] == 6}}">
+      <button id="nwDay" class="myNWDay" bindtap="nextDayClick" data-text="{{item}}">{{item}}</button>
+    </block>
+    <block wx:else>
+      <button id="nextDay" class="myNextDay" bindtap="nextDayClick" data-text="{{item}}">{{item}}</button>
+    </block>
+  </block>
+</view>
+<view>
+  <text>农历{{myLunar['lYear'] + myLunar['Animal']}}年</text>
+  <text>{{myLunar['IMonthCn'] + myLunar['IDayCn']}} \n</text>
+  <text>星期：{{myLunar['ncWeek']}} \n</text>
+  <text>星座：{{myLunar['astro']}} \n</text>
+  <text>当前月是否闰月：{{myLunar['isLeap']}} \n</text>
+  <text>当前日期节气：{{myLunar['isTerm'] ? myLunar['Term'] : '无'}} \n</text>
+  <text>天干地支表示年月日：{{myLunar['gzYear'] + '年' + myLunar['gzMonth'] + '月' + myLunar['gzDay'] + '日'}}</text>
+</view>
+
+<modal hidden="{{hiddenmodalput}}" title="请输入要保存的信息" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">  
+  <input type='text' placeholder="请输入标题" bindinput="bindTitleInput" value="{{inputTitleValue}}" auto-focus/>  
+  <textarea placeholder="请输入内容" bindinput="bindKeyInput" value="{{inputValue}}"></textarea>
+</modal>
